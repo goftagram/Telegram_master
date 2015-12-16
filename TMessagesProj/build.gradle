@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.1.+'
+    compile 'com.google.android.gms:play-services:3.2.+'
+    compile 'net.hockeyapp.android:HockeySDK:3.6.+'
+    compile 'com.googlecode.mp4parser:isoparser:1.0.+'
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+
+    useLibrary 'org.apache.http.legacy'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("config/release.keystore")
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+
+        release {
+            storeFile file("config/release.keystore")
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            jniDebuggable true
+            signingConfig signingConfigs.debug
+            applicationIdSuffix ".beta"
+        }
+
+        release {
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.release
+        }
+
+        foss {
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+
+    sourceSets.debug {
+        manifest.srcFile 'config/debug/AndroidManifest.xml'
+    }
+
+    sourceSets.release {
+        manifest.srcFile 'config/release/AndroidManifest.xml'
+    }
+
+    sourceSets.foss {
+        manifest.srcFile 'config/foss/AndroidManifest.xml'
+    }
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 695
+        versionName "3.3.2"
+    }
+}
