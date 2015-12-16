@@ -45,7 +45,7 @@ jobject getJavaByteBuffer(JNIEnv *env, jclass c, jint address) {
     return buffer->getJavaByteBuffer();
 }
 
-static const char *NativeByteBufferClassPathName = "org/telegram/tgnet/NativeByteBuffer";
+static const char *NativeByteBufferClassPathName = "com/goftagram/telegram/tgnet/NativeByteBuffer";
 static JNINativeMethod NativeByteBufferMethods[] = {
         {"native_getFreeBuffer", "(I)I", (void *) getFreeBuffer},
         {"native_limit", "(I)I", (void *) limit},
@@ -229,12 +229,12 @@ void setJava(JNIEnv *env, jclass c, jboolean useJavaByteBuffers) {
     ConnectionsManager::getInstance().setDelegate(new Delegate());
 }
 
-static const char *ConnectionsManagerClassPathName = "org/telegram/tgnet/ConnectionsManager";
+static const char *ConnectionsManagerClassPathName = "com/goftagram/telegram/tgnet/ConnectionsManager";
 static JNINativeMethod ConnectionsManagerMethods[] = {
         {"native_getCurrentTimeMillis", "()J", (void *) getCurrentTimeMillis},
         {"native_getCurrentTime", "()I", (void *) getCurrentTime},
         {"native_getTimeDifference", "()I", (void *) getTimeDifference},
-        {"native_sendRequest", "(ILorg/telegram/tgnet/RequestDelegateInternal;Lorg/telegram/tgnet/QuickAckDelegate;IIIZI)V", (void *) sendRequest},
+        {"native_sendRequest", "(ILcom/goftagram/telegram/tgnet/RequestDelegateInternal;Lcom/goftagram/telegram/tgnet/QuickAckDelegate;IIIZI)V", (void *) sendRequest},
         {"native_cancelRequest", "(IZ)V", (void *) cancelRequest},
         {"native_cleanUp", "()V", (void *) cleanUp},
         {"native_cancelRequestsForGuid", "(I)V", (void *) cancelRequestsForGuid},
@@ -275,7 +275,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
         return JNI_FALSE;
     }
     
-    jclass_RequestDelegateInternal = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/tgnet/RequestDelegateInternal"));
+    jclass_RequestDelegateInternal = (jclass) env->NewGlobalRef(env->FindClass("com/goftagram/telegram/tgnet/RequestDelegateInternal"));
     if (jclass_RequestDelegateInternal == 0) {
         return JNI_FALSE;
     }
@@ -284,7 +284,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
         return JNI_FALSE;
     }
 
-    jclass_QuickAckDelegate = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/tgnet/QuickAckDelegate"));
+    jclass_QuickAckDelegate = (jclass) env->NewGlobalRef(env->FindClass("com/goftagram/telegram/tgnet/QuickAckDelegate"));
     if (jclass_RequestDelegateInternal == 0) {
         return JNI_FALSE;
     }
@@ -293,7 +293,7 @@ extern "C" int registerNativeTgNetFunctions(JavaVM *vm, JNIEnv *env) {
         return JNI_FALSE;
     }
 
-    jclass_ConnectionsManager = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/tgnet/ConnectionsManager"));
+    jclass_ConnectionsManager = (jclass) env->NewGlobalRef(env->FindClass("com/goftagram/telegram/tgnet/ConnectionsManager"));
     if (jclass_ConnectionsManager == 0) {
         return JNI_FALSE;
     }

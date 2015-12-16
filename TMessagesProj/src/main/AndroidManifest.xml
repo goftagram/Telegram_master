@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.telegram.messenger"
+    package="com.goftagram.telegram.messenger"
     android:installLocation="auto">
 
     <supports-screens android:anyDensity="true"
@@ -39,16 +39,16 @@
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <application
-        android:name=".ApplicationLoader"
+        android:name="com.goftagram.telegram.messenger.ApplicationLoader"
         android:allowBackup="false"
         android:hardwareAccelerated="@bool/useHardwareAcceleration"
         android:icon="@drawable/ic_launcher"
         android:largeHeap="true"
         android:theme="@style/Theme.TMessages.Start"
-        android:manageSpaceActivity="org.telegram.ui.ManageSpaceActivity">
+        android:manageSpaceActivity="com.goftagram.telegram.ui.ManageSpaceActivity">
 
         <activity
-            android:name="org.telegram.ui.LaunchActivity"
+            android:name="com.goftagram.telegram.ui.LaunchActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:launchMode="singleTask"
@@ -91,7 +91,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="vnd.android.cursor.item/vnd.org.telegram.messenger.android.profile"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.goftagram.telegram.messenger.android.profile"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
@@ -109,18 +109,18 @@
             <meta-data android:name="android.service.chooser.chooser_target_service" android:value=".TgChooserTargetService" />
         </activity>
         <activity
-            android:name="org.telegram.ui.ManageSpaceActivity"
+            android:name="com.goftagram.telegram.ui.ManageSpaceActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:hardwareAccelerated="@bool/useHardwareAcceleration"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
-            android:name="org.telegram.ui.IntroActivity"
+            android:name="com.goftagram.telegram.ui.IntroActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="org.telegram.ui.PopupNotificationActivity"
+            android:name="com.goftagram.telegram.ui.PopupNotificationActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
@@ -129,25 +129,25 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
 
-        <receiver android:name=".AutoMessageHeardReceiver">
+        <receiver android:name="com.goftagram.telegram.messenger.AutoMessageHeardReceiver">
             <intent-filter>
-                <action android:name="org.telegram.messenger.ACTION_MESSAGE_HEARD"/>
+                <action android:name="com.goftagram.telegram.messenger.ACTION_MESSAGE_HEARD"/>
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".AutoMessageReplyReceiver">
+        <receiver android:name="com.goftagram.telegram.messenger.AutoMessageReplyReceiver">
             <intent-filter>
-                <action android:name="org.telegram.messenger.ACTION_MESSAGE_REPLY"/>
+                <action android:name="com.goftagram.telegram.messenger.ACTION_MESSAGE_REPLY"/>
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".SmsListener">
+        <receiver android:name="com.goftagram.telegram.messenger.SmsListener">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".AuthenticatorService" android:exported="true">
+        <service android:name="com.goftagram.telegram.messenger.AuthenticatorService" android:exported="true">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator"/>
             </intent-filter>
@@ -155,7 +155,7 @@
                 android:resource="@xml/auth"/>
         </service>
 
-        <service android:name=".ContactsSyncAdapterService" android:exported="true">
+        <service android:name="com.goftagram.telegram.messenger.ContactsSyncAdapterService" android:exported="true">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
@@ -166,7 +166,7 @@
         </service>
 
         <service
-            android:name="org.telegram.messenger.TgChooserTargetService"
+            android:name="com.goftagram.telegram.messenger.TgChooserTargetService"
             android:label="@string/AppName"
             android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
             <intent-filter>
@@ -174,32 +174,32 @@
             </intent-filter>
         </service>
 
-        <service android:name=".NotificationsService" android:enabled="true"/>
-        <service android:name=".NotificationRepeat" android:exported="false"/>
-        <service android:name=".ClearCacheService" android:exported="false"/>
-        <service android:name=".VideoEncodingService" android:enabled="true"/>
-        <service android:name=".MusicPlayerService" android:exported="true" android:enabled="true"/>
+        <service android:name="com.goftagram.telegram.messenger.NotificationsService" android:enabled="true"/>
+        <service android:name="com.goftagram.telegram.messenger.NotificationRepeat" android:exported="false"/>
+        <service android:name="com.goftagram.telegram.messenger.ClearCacheService" android:exported="false"/>
+        <service android:name="com.goftagram.telegram.messenger.VideoEncodingService" android:enabled="true"/>
+        <service android:name="com.goftagram.telegram.messenger.MusicPlayerService" android:exported="true" android:enabled="true"/>
 
-        <receiver android:name=".MusicPlayerReceiver" >
+        <receiver android:name="com.goftagram.telegram.messenger.MusicPlayerReceiver" >
             <intent-filter>
-                <action android:name="org.telegram.android.musicplayer.close" />
-                <action android:name="org.telegram.android.musicplayer.pause" />
-                <action android:name="org.telegram.android.musicplayer.next" />
-                <action android:name="org.telegram.android.musicplayer.play" />
-                <action android:name="org.telegram.android.musicplayer.previous" />
+                <action android:name="com.goftagram.telegram.android.musicplayer.close" />
+                <action android:name="com.goftagram.telegram.android.musicplayer.pause" />
+                <action android:name="com.goftagram.telegram.android.musicplayer.next" />
+                <action android:name="com.goftagram.telegram.android.musicplayer.play" />
+                <action android:name="com.goftagram.telegram.android.musicplayer.previous" />
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".AppStartReceiver" android:enabled="true">
+        <receiver android:name="com.goftagram.telegram.messenger.AppStartReceiver" android:enabled="true">
             <intent-filter>
-                <action android:name="org.telegram.start" />
+                <action android:name="com.goftagram.telegram.start" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".WearReplyReceiver" android:enabled="true"/>
+        <receiver android:name="com.goftagram.telegram.messenger.WearReplyReceiver" android:enabled="true"/>
 
         <uses-library android:name="com.sec.android.app.multiwindow" android:required="false" />
         <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />

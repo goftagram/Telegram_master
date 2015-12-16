@@ -25,17 +25,19 @@ android {
     signingConfigs {
         debug {
             storeFile file("config/release.keystore")
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
+            storePassword "telegram_goftagram_haloruz.com"
+            keyAlias "telegram_goftagram_haloruz.com"
+            keyPassword "telegram_goftagram_haloruz.com"
         }
 
         release {
             storeFile file("config/release.keystore")
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
+            storePassword "telegram_goftagram_haloruz.com"
+            keyAlias "telegram_goftagram_haloruz.com"
+            keyPassword "telegram_goftagram_haloruz.com"
         }
+
+
     }
 
     buildTypes {
@@ -57,6 +59,9 @@ android {
             jniDebuggable false
             signingConfig signingConfigs.release
         }
+
+
+
     }
 
     sourceSets.main {
@@ -77,9 +82,13 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 8
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 695
         versionName "3.3.2"
+    }
+
+    dexOptions {
+        jumboMode = true
     }
 }
