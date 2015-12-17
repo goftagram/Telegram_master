@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/drawer_home_item_text"
+
+        />
+    <item
+        android:id="@+id/nav_new_channel"
+        android:icon="@drawable/ic_note_add_black_24dp"
+        android:title="@string/drawer_new_channel_item_text" />
+
+    <!--<item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_discuss"
+        android:title="@string/drawer_search_item_text" />-->
+
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="@string/drawer_contact_us" />
+
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_group_black_24dp"
+            android:title="@string/drawer_about_us_item_text" />
+
+    </group>
+
+</menu>

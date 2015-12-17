@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/channel_row_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/comment_head_drawable"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/comment_row_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:id="@+id/comment_row_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/comment_row_date"/>
+
+
+            <ImageView
+                android:id="@+id/comment_row_report_btn"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/widget_click_selector"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_report_problem_red_24dp"
+                android:layout_alignParentLeft="true"/>
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/comment_row_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

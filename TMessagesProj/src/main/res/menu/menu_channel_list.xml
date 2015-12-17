@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".ChannelList">
+
+    <item
+        android:id="@+id/actionbar_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/actionbar_refresh"
+        android:icon="@drawable/ic_sync_white_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
+</menu>

@@ -1,0 +1,29 @@
+<resources>
+
+    <dimen name="signup_fragment_LinearLayout_height">60dp</dimen>
+    <dimen name="signup_fragment_EditText_textsize">16sp</dimen>
+    <dimen name="signup_fragment_CircularProgressButton_textsize">24sp</dimen>
+    <dimen name="signup_fragment_Title_textsize">60sp</dimen>
+    <dimen name="signup_fragment_title_marginTop">50dp</dimen>
+
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="list_item_avatar_size">40dp</dimen>
+
+
+    <!-- SignUp Dimens-->
+    <dimen name="fragment_sign_up_field_width">250dp</dimen>
+    <dimen name="fragment_sign_up_field_height">80dp</dimen>
+    <dimen name="fragment_sign_up_field_gap">24dp</dimen>
+
+    <dimen name="activity_new_channel_field_padding">8dp</dimen>
+    <dimen name="activity_new_channel_field_margin">10dp</dimen>
+</resources>

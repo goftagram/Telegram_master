@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="signup_fragment_LinearLayout_height">60dp</dimen>
+    <dimen name="signup_fragment_EditText_textsize">14sp</dimen>
+    <dimen name="signup_fragment_CircularProgressButton_textsize">24sp</dimen>
+    <dimen name="signup_fragment_Title_textsize">60sp</dimen>
+    <dimen name="signup_fragment_title_marginTop">50dp</dimen>
+
+
+</resources>

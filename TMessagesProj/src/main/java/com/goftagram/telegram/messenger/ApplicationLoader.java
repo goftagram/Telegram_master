@@ -28,14 +28,14 @@ import android.os.Handler;
 import android.os.PowerManager;
 import android.util.Base64;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
-
+import com.goftagram.telegram.goftagram.gcm.GcmManager;
 import com.goftagram.telegram.tgnet.ConnectionsManager;
 import com.goftagram.telegram.tgnet.SerializedData;
 import com.goftagram.telegram.tgnet.TLRPC;
 import com.goftagram.telegram.ui.Components.ForegroundDetector;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import java.io.File;
 import java.io.RandomAccessFile;
@@ -419,6 +419,7 @@ public class ApplicationLoader extends Application {
     }
 
     private void sendRegistrationIdToBackend(final boolean isNew) {
+
         Utilities.stageQueue.postRunnable(new Runnable() {
             @Override
             public void run() {
@@ -438,6 +439,8 @@ public class ApplicationLoader extends Application {
     }
 
     private void storeRegistrationId(Context context, String regId) {
+        GcmManager.getInstance(context).setRegistrationToken(regId);
+        GcmManager.getInstance(context).setTokenSent(false);
         final SharedPreferences prefs = getGCMPreferences(context);
         int appVersion = BuildVars.BUILD_VERSION;
         FileLog.e("tmessages", "Saving regId on app version " + appVersion);

@@ -43,32 +43,33 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.goftagram.telegram.messenger.AndroidUtilities;
 import com.goftagram.telegram.PhoneFormat.PhoneFormat;
+import com.goftagram.telegram.goftagram.activity.SignUpActivity;
+import com.goftagram.telegram.messenger.AndroidUtilities;
+import com.goftagram.telegram.messenger.ApplicationLoader;
 import com.goftagram.telegram.messenger.ChatObject;
 import com.goftagram.telegram.messenger.ContactsController;
+import com.goftagram.telegram.messenger.FileLog;
 import com.goftagram.telegram.messenger.ImageLoader;
+import com.goftagram.telegram.messenger.LocaleController;
 import com.goftagram.telegram.messenger.MessagesController;
 import com.goftagram.telegram.messenger.MessagesStorage;
 import com.goftagram.telegram.messenger.NativeCrashManager;
-import com.goftagram.telegram.messenger.SendMessagesHelper;
-import com.goftagram.telegram.messenger.UserObject;
-import com.goftagram.telegram.messenger.query.StickersQuery;
-import com.goftagram.telegram.messenger.ApplicationLoader;
-import com.goftagram.telegram.messenger.FileLog;
-import com.goftagram.telegram.messenger.LocaleController;
 import com.goftagram.telegram.messenger.NotificationCenter;
 import com.goftagram.telegram.messenger.R;
+import com.goftagram.telegram.messenger.SendMessagesHelper;
+import com.goftagram.telegram.messenger.UserConfig;
+import com.goftagram.telegram.messenger.UserObject;
+import com.goftagram.telegram.messenger.query.StickersQuery;
 import com.goftagram.telegram.myconfig.LanguageCustomizer;
 import com.goftagram.telegram.tgnet.ConnectionsManager;
 import com.goftagram.telegram.tgnet.RequestDelegate;
 import com.goftagram.telegram.tgnet.TLObject;
 import com.goftagram.telegram.tgnet.TLRPC;
-import com.goftagram.telegram.messenger.UserConfig;
-import com.goftagram.telegram.ui.Adapters.DrawerLayoutAdapter;
 import com.goftagram.telegram.ui.ActionBar.ActionBarLayout;
 import com.goftagram.telegram.ui.ActionBar.BaseFragment;
 import com.goftagram.telegram.ui.ActionBar.DrawerLayoutContainer;
+import com.goftagram.telegram.ui.Adapters.DrawerLayoutAdapter;
 import com.goftagram.telegram.ui.Components.LayoutHelper;
 import com.goftagram.telegram.ui.Components.PasscodeView;
 
@@ -325,10 +326,16 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                         FileLog.e("tmessages", e);
                     }
                     drawerLayoutContainer.closeDrawer(false);
-                } else if (position == 8) {
+
+                }else if(position == 8){
+                    Intent intent = new Intent(LaunchActivity.this, SignUpActivity.class);
+                    startActivity(intent);
+                    drawerLayoutContainer.closeDrawer(false);
+
+                } else if (position == 9) {
                     presentFragment(new SettingsActivity());
                     drawerLayoutContainer.closeDrawer(false);
-                } else if (position == 9) {
+                } else if (position == 10) {
                     try {
                         Intent pickIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(LocaleController.getString("TelegramFaqUrl", R.string.TelegramFaqUrl)));
                         startActivityForResult(pickIntent, 500);

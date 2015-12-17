@@ -3,8 +3,8 @@
 
 
 <resources>
-    <string name="AppName">Telegram</string>
-    <string name="AppNameBeta">Telegram Beta</string>
+    <string name="AppName">Goftagram</string>
+    <string name="AppNameBeta">Goftagram Beta</string>
     <string name="LanguageName">English</string>
     <string name="LanguageNameInEnglish">English</string>
     <string name="LanguageCode">en</string>
@@ -1032,4 +1032,126 @@
     <!--update text-->
     <string name="updateText">Telegram for Android has been updated. New in version 3.3.2:\n\n- Cache management: Control how much disk space Telegram uses on your device, delete cache for specific types of content.\n- Delete cache from supergroups and channels: Tap and hold on them in the chats list and \'Delete from Cache\'.\n- Sticker management: Manually rearrange your sticker packs. Pack order is now synced across all your devices.\n\nMore about this update:\nhttps://telegram.org/blog/cache-and-stickers</string>
     <string name="updateBuild">693</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="app_name">ایران کانال</string>
+    <string name="action_search">search</string>
+
+
+    <string name="category">دسته‌ها</string>
+    <string name="new_channel">تازه‌ها</string>
+    <string name="top_rated_channel">محبوب‌ها</string>
+    <string name="promoted_channel">برگزیده‌ها</string>
+
+    <string name="rate_has_sent">امتیاز شما فرستاده شد</string>
+    <string name="comment_has_sent">نظر شما فرستاده شد</string>
+    <string name="report_text_has_sent">نظر شما ارسال شد</string>
+
+    <string name="fragment_sign_up_title">ثبت نام</string>
+    <string name="fragment_sign_up_first_name">نام</string>
+    <string name="fragment_sign_up_last_name">نام خانواگی (اختیاری)</string>
+    <string name="fragment_sign_up_phone_number">شماره همراه (اختیاری)</string>
+    <string name="fragment_sign_up_btn_error_text">خطا</string>
+    <string name="fragment_sign_up_btn_success_text">خوش آمدید</string>
+    <string name="fragment_sign_up_btn_text">ورود</string>
+
+    <string name="submit">ثبت</string>
+
+    <string name="server_unknown_format">خطا در داده‌ی سرور</string>
+    <string name="authentication_error">خطا در لاگین</string>
+    <string name="not_found_user">کاربری یافت نشد!</string>
+
+    <string name="io_error">خطا در اتصال به سرور</string>
+
+    <string name="no_network_connection">عدم اتصال به شبکه</string>
+    <string name="empty_list_rootView">هیچ داده ای یافت نشد</string>
+
+    <string name="retry">تلاش مجدد</string>
+
+
+    <string name="your_rate">امتیاز شما به این کانال</string>
+    <string name="your_comment">نظر شما</string>
+
+    <string name="report_policy_violation_title">گزارش خطا</string>
+    <string name="report_policy_violation_for_comment">آیا مطمئن هستید نظر داده شده مناسب نیست؟</string>
+    <string name="report_policy_violation_for_channel">آیا مطمئن هستید این کانال دارای محتوای نامناسب می باشد؟</string>
+
+    <string name="cafebazar_rate_title">پیشنهاد</string>
+    <string name="cafebazar_rate_text">آیا مایلید به ما در کافه بازار رای بدهید؟</string>
+    <string name="already_rated">قبلا رای دادم</string>
+
+    <string name="yes">بلی</string>
+    <string name="no">خیر</string>
+
+
+    <!-- Suggestion Channel List Strings-->
+    <string name="title_of_suggestion_channel_list">کانال‌های پیشنهادی</string>
+
+    <!-- Navigation Drawer Item Text-->
+    <string name="drawer_home_item_text">خانه</string>
+    <string name="drawer_new_channel_item_text">ثبت رایگان کانال</string>
+    <string name="drawer_search_item_text">جستجو</string>
+    <string name="drawer_about_us_item_text">درباره ما</string>
+    <string name="drawer_contact_us">تماس با ما</string>
+
+    <!-- New Channel Strings-->
+    <string name="activity_new_channel_username_field">لینک کانال</string>
+    <string name="activity_new_channel_title_field">عنوان</string>
+    <string name="activity_new_channel_description_field">توضیحات</string>
+    <string name="activity_new_channel_add_tag_btn_text">افزودن تگ</string>
+    <!--<string name="activity_new_channel_tags_field">هشتگ‌ها (مانند:ورزش,تغذیه,ایران)</string>-->
+    <string name="activity_new_channel_tags_field">حداقل 5 کلیدواژه‌ی موضوعی مرتیط با کانال را وارد کنید</string>
+    <string name="activity_new_channel_submit_btn_text">ثبت</string>
+    <string name="crop__done">انجام</string>
+    <string name="crop__cancel">انصراف</string>
+    <string name="error_loading_image_not_terminated">لطفا تا نمایش تصویر شکیبا باشید!</string>
+    <string name="internal_storage">Internal storage</string>
+    <string name="select_avatar_dlg_gallery">عکس‌ها</string>
+    <string name="select_avatar_dlg_camera">دوربین</string>
+    <string name="select_cover_dlg_title">عکس  کانال خود را انتخاب نمایید</string>
+    <string name="private_access_switch_text">دسترسی به کانال خصوصی است</string>
+    <string name="public_access_switch_text">دسترسی به کانال عمومی است</string>
+    <string name="error_selection_image">عکس کانال انتخاب نشده است</string>
+    <string name="success_add_channel">کانال با موفقیت ثبت شد</string>
+    <string name="rules_title">قوانین ثبت کانال</string>
+
+
+    <string name="rules_of_add_channel">کانال‌های زیر در اپلیکیشن معرفی نمی شوند.لطفا معرفی نفرمایید:\n۱. کانال‌هایی که محتوای غیر اخلاقی دارند یا کانال‌هایی با محتوای غیر اخلاقی را تبلیغ می کنند.\n۲. کانال‌هایی که ضد اسلام فرهنگ و قانون ایران و موازین اجتماعی فعالیت می کنند.\n۳. همه کانال‌هایی که از جهتی مناسب استفاده همه سنین یا اقشار جامعه نباشند.\n۴. کانال‌هایی که محتوای خود را بدون ذکر منبع از کانالی دیگر کپی می کنند یا نرم افزارهای پولی را رایگان عرضه می کنند.</string>
+
+    <!-- Dialogs-->
+    <!-- Terms Of Use Dialog-->
+    <string name="btn_ok_text">باشه</string>
+    <!-- Search Dialog-->
+    <string name="search_dialog_title">جستجو</string>
+    <!-- Channel Link Dialog-->
+    <string name="channel_link_copy_btn_text">رونوشت از متن پیشنهادی</string>
+    <string name="channel_link_copy_btn_text_start">سلام دوستان</string>
+    <string name="copy">رونوشت: </string>
+
+
+    <!-- Other Strings -->
+    <string name="error_no_internet_connection">خطا در اتصال به اینترنت</string>
+    <string name="cancel_string">انصراف</string>
 </resources>

@@ -9,14 +9,17 @@
 package com.goftagram.telegram.messenger;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.content.WakefulBroadcastReceiver;
 
-import org.json.JSONObject;
+import com.goftagram.telegram.goftagram.gcm.GcmPushMessageHandlerIntentService;
 import com.goftagram.telegram.tgnet.ConnectionsManager;
 
-public class GcmBroadcastReceiver extends BroadcastReceiver {
+import org.json.JSONObject;
+
+public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
 
     public static final int NOTIFICATION_ID = 1;
 
@@ -24,7 +27,12 @@ public class GcmBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent intent) {
         FileLog.d("tmessages", "GCM received intent: " + intent);
 
+        ComponentName comp = new ComponentName(context.getPackageName(),
+                GcmPushMessageHandlerIntentService.class.getName());
+        startWakefulService(context, (intent.setComponent(comp)));
+
         if (intent.getAction().equals("com.google.android.c2dm.intent.RECEIVE")) {
+
             AndroidUtilities.runOnUIThread(new Runnable() {
                 @Override
                 public void run() {

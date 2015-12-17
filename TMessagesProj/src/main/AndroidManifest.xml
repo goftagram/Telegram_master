@@ -38,6 +38,10 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
+    <uses-permission android:name="android.permission.STORAGE" />
+
+
+
     <application
         android:name="com.goftagram.telegram.messenger.ApplicationLoader"
         android:allowBackup="false"
@@ -129,6 +133,82 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
 
+
+
+        <activity
+            android:name="com.goftagram.telegram.goftagram.activity.GoftagramMainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApp">
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"
+                android:value=".activity.SearchableActivity" />
+        </activity>
+
+        <activity
+            android:name="com.goftagram.telegram.goftagram.activity.SearchableActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.MyApp">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"
+                android:value=".activity.SearchableActivity" />
+        </activity>
+
+        <activity
+            android:name="com.goftagram.telegram.goftagram.activity.ChannelListActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApp"/>
+
+
+        <activity
+            android:name="com.goftagram.telegram.goftagram.activity.SignUpActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApp">
+
+        </activity>
+
+        <activity
+            android:name="com.goftagram.telegram.goftagram.activity.ChannelDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApp">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.goftagram.telegram.goftagram.activity.GoftagramMainActivity" />
+
+        </activity>
+
+        <activity
+            android:name="com.goftagram.telegram.goftagram.activity.NewChannelActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApp"
+            />
+
+        <activity
+            android:name="com.goftagram.telegram.goftagram.activity.CropActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApp"/>
+
+
+
+
+
         <receiver android:name="com.goftagram.telegram.messenger.AutoMessageHeardReceiver">
             <intent-filter>
                 <action android:name="com.goftagram.telegram.messenger.ACTION_MESSAGE_HEARD"/>
@@ -146,6 +226,33 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+
+        <receiver
+            android:name="com.goftagram.telegram.goftagram.receiver.NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.goftagram.telegram.goftagram.receiver.AlarmReceiver"/>
+
+        <receiver android:name="com.goftagram.telegram.goftagram.receiver.BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
+
+
+
+        <service android:name="com.goftagram.telegram.goftagram.gcm.RegistrationIntentService"/>
+        <service android:name="com.goftagram.telegram.goftagram.gcm.GcmPushMessageHandlerIntentService"/>
+
+        <service android:name="com.goftagram.telegram.goftagram.service.DatabaseInvalidationService" />
+        <service android:name="com.goftagram.telegram.goftagram.service.NewVersionDownloaderService"/>
+        <service android:name="com.goftagram.telegram.goftagram.service.RestService"/>
+
 
         <service android:name="com.goftagram.telegram.messenger.AuthenticatorService" android:exported="true">
             <intent-filter>
@@ -180,6 +287,7 @@
         <service android:name="com.goftagram.telegram.messenger.VideoEncodingService" android:enabled="true"/>
         <service android:name="com.goftagram.telegram.messenger.MusicPlayerService" android:exported="true" android:enabled="true"/>
 
+
         <receiver android:name="com.goftagram.telegram.messenger.MusicPlayerReceiver" >
             <intent-filter>
                 <action android:name="com.goftagram.telegram.android.musicplayer.close" />
@@ -200,6 +308,13 @@
         </receiver>
 
         <receiver android:name="com.goftagram.telegram.messenger.WearReplyReceiver" android:enabled="true"/>
+
+
+        <provider
+            android:name="com.goftagram.telegram.goftagram.provider.GoftagramProvider"
+            android:authorities="com.goftagram.telegram"
+            android:exported="false"/>
+
 
         <uses-library android:name="com.sec.android.app.multiwindow" android:required="false" />
         <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />

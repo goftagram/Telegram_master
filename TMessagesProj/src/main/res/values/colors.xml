@@ -1,4 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="divider">#dcdcdc</color>
+
+
+    <color name="window_background">#FFF5F5F5</color>
+
+    <color name="add_channel_field_color" >#FFF1DB</color>
+    <color name="primary">#F44336</color>
+    <color name="primary_dark">#D32F2F</color>
+    <color name="primary_light">#FFCDD2</color>
+    <color name="accent">#FFC107</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+
+
+    <color name="yellow_rating_star">#FFC107</color>
+
+    <color name="alpha_primary">#44795548</color>
+
+    <color name="recyclerview_item_press">#88FFC107</color>
+
+    <color name="empty_star">#A0A0A0</color>
+    <color name="detail_activity_default_background">#ABABAB</color>
+
+    <color name="detail_activity_card_background">#99FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+
+
+    <color name="Red">#FF0000</color>
+    <color name="Gray">#e5e5e5</color>
+    <color name="secondGray">#A8BABF</color>
+    <color name="darkGray">#454547</color>
+    <color name="yellow">#E3DA5B</color>
+    <color name="dark_green">#1E8443</color>
+    <!--<color name="orange">#F5BC36</color>-->
+    <color name="orange">#ff6600</color>
+    <color name="orange_dark">#F29100</color>
 </resources>
