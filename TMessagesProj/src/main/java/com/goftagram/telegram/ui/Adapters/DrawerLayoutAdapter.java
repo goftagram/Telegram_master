@@ -93,7 +93,7 @@ public class DrawerLayoutAdapter extends BaseAdapter {
             } else if (i == 7) {
                 actionCell.setTextAndIcon(LocaleController.getString("InviteFriends", R.string.InviteFriends), R.drawable.menu_invite);
             }else if (i == 8) {
-                    actionCell.setTextAndIcon(LocaleController.getString("IranChannel", R.string.app_name), R.drawable.menu_settings);
+                    actionCell.setTextAndIcon(LocaleController.getString("Goftagram", R.string.channel_drawer_menu_name), R.drawable.notification);
             } else if (i == 9) {
                 actionCell.setTextAndIcon(LocaleController.getString("Settings", R.string.Settings), R.drawable.menu_settings);
             } else if (i == 10) {

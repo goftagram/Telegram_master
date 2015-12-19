@@ -132,7 +132,7 @@ public class GcmPushMessageHandlerIntentService  extends IntentService {
 
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.logo_push)
+                .setSmallIcon(R.drawable.notification)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(title))
@@ -162,7 +162,7 @@ public class GcmPushMessageHandlerIntentService  extends IntentService {
             b = Picasso.with(context).load(imageUrl).get();
             contentView.setImageViewBitmap(R.id.icon, b);
         } catch (IOException e) {
-            contentView.setImageViewResource(R.id.icon, R.drawable.logo_push);;
+            contentView.setImageViewResource(R.id.icon, R.drawable.notification);;
         }
 
         contentView.setTextViewText(R.id.title,title );
@@ -171,7 +171,7 @@ public class GcmPushMessageHandlerIntentService  extends IntentService {
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.logo_push)
+                .setSmallIcon(R.drawable.notification)
                 .setContent(contentView)
                 .setContentText(description)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(title))
@@ -206,7 +206,7 @@ public class GcmPushMessageHandlerIntentService  extends IntentService {
             b = Picasso.with(context).load(telegramChannel.getThumbnail()).get();
             contentView.setImageViewBitmap(R.id.icon, b);
         } catch (IOException e) {
-            contentView.setImageViewResource(R.id.icon, R.drawable.logo_push);;
+            contentView.setImageViewResource(R.id.icon, R.drawable.notification);;
         }
 
 
@@ -217,7 +217,7 @@ public class GcmPushMessageHandlerIntentService  extends IntentService {
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.logo_push)
+                .setSmallIcon(R.drawable.notification)
                 .setContent(contentView)
                 .setContentText(telegramChannel.getDescription())
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(telegramChannel.getTitle()))

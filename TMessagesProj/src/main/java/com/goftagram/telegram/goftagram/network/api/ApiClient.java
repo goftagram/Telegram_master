@@ -61,6 +61,8 @@ public class ApiClient {
         sb.append("telegram_id=" + telegramId);
         sb.append("&");
         sb.append("imei=" + imei);
+        sb.append("&");
+        sb.append("is_goftagram=yes");
         String param = sb.toString();
 
         HttpManager.NetTransResult result = HttpManager

@@ -6,8 +6,8 @@
     <color name="window_background">#FFF5F5F5</color>
 
     <color name="add_channel_field_color" >#FFF1DB</color>
-    <color name="primary">#F44336</color>
-    <color name="primary_dark">#D32F2F</color>
+    <color name="primary">#54759e</color>
+    <color name="primary_dark">#435e7e</color>
     <color name="primary_light">#FFCDD2</color>
     <color name="accent">#FFC107</color>
     <color name="primary_text">#212121</color>

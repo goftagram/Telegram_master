@@ -4,7 +4,7 @@
 
 <resources>
     <string name="AppName">Goftagram</string>
-    <string name="AppNameBeta">Goftagram Beta</string>
+    <string name="AppNameBeta">Goftagram beta</string>
     <string name="LanguageName">English</string>
     <string name="LanguageNameInEnglish">English</string>
     <string name="LanguageCode">en</string>
@@ -1056,7 +1056,9 @@
 
 
 
-    <string name="app_name">ایران کانال</string>
+
+    <string name ="app_name">گفتاگرام</string>
+    <string name="channel_drawer_menu_name">کانالچه</string>
     <string name="action_search">search</string>
 
 

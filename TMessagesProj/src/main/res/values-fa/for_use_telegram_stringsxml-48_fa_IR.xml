@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="AppName">تلگرام</string>
-  <string name="AppNameBeta">تلگرام نسخه بتا</string>
+  <string name="AppName">گفتاگرام</string>
+  <string name="AppNameBeta">گفتاگرام نسخه بتا</string>
   <string name="LanguageName">پارسی</string>
   <string name="LanguageNameInEnglish">Parsi</string>
   <string name="LanguageCode">fa_IR</string>
@@ -145,7 +145,7 @@
   <string name="ChannelRemoveUserAdmin">پاک کردن</string>
   <string name="ChannelMembersInfo">فقط مدیران کانال می تونن این لیست رو ببینن</string>
   <string name="ChannelAdminNotParticipant">این بنده خدا هنوز وارد کانال نشده . می خوای دعوتش کنی ؟</string>
-  <string name="ChannelLinkInfo">همه کاربرهای تلگرام می تونن با استفاده از این لینک عضو کانال شما بشن</string>
+  <string name="ChannelLinkInfo">همه کاربرهای گفتاگرام می تونن با استفاده از این لینک عضو کانال شما بشن</string>
   <string name="ChannelAdminsInfo">شما می تونی برای کانالتون مدیر اضافه کنی . برای حذفش هم کافیه روش بزنی و نگه داری .</string>
   <string name="ChannelJoinTo">می خوای عضو کانال  \'%1$s\'  بشی ؟</string>
   <string name="ChannelCantOpenPrivate">ببخشید،این کانال دیگر در دسترس نیست</string>
@@ -217,7 +217,7 @@
   <string name="SendingPhoto">داره عکس می فرسته ...</string>
   <string name="SendingVideoStatus">داره ویدیو می فرسته ...</string>
   <string name="SendingFile">داره فایل می فرسته ...</string>
-  <string name="GotAQuestion">در مورد تلگرام
+  <string name="GotAQuestion">در مورد گفتاگرام
 سوال دارید ؟</string>
   <string name="ChatTakePhoto">عکس بگیر</string>
   <string name="ChatGallery">گالری</string>
@@ -298,8 +298,8 @@
   <string name="NotificationGroupKickMember">%1$s %3$s رو از گروه %2$s حذف کرد</string>
   <string name="NotificationGroupKickYou">%1$s شما رو از گروه %2$s حذف کرد</string>
   <string name="NotificationGroupLeftMember">%1$s از گروه %2$s رفت</string>
-  <string name="NotificationContactJoined">%1$s وارد تلگرام شد !</string>
-  <string name="NotificationUnrecognizedDevice">%1$s,\n ما یه ورود به اکانتت رو از یه دستگاه دیگه تو %2$s شناسایی کردیم. \n\n دستگاه: %3$s\ موقعیت: %4$s\n\nIf  اگر این شما نیستی، میتونی با رفتن به تنظیمات - حریم خصوصی و امنیت - نشست ها بری و بهش پایان بدی. \n\n اگر فکر می کنی یکی دیگه وارد حسابت شده علیه شماست، میتونی تایید دو مرحله ای را از تنظیمات - حریم خصوصی و امنیت فعال کنی. \ n\nبا احترام، \n تیم تلگرام</string>
+  <string name="NotificationContactJoined">%1$s وارد گفتاگرام شد !</string>
+  <string name="NotificationUnrecognizedDevice">%1$s,\n ما یه ورود به اکانتت رو از یه دستگاه دیگه تو %2$s شناسایی کردیم. \n\n دستگاه: %3$s\ موقعیت: %4$s\n\nIf  اگر این شما نیستی، میتونی با رفتن به تنظیمات - حریم خصوصی و امنیت - نشست ها بری و بهش پایان بدی. \n\n اگر فکر می کنی یکی دیگه وارد حسابت شده علیه شماست، میتونی تایید دو مرحله ای را از تنظیمات - حریم خصوصی و امنیت فعال کنی. \ n\nبا احترام، \n تیم گفتاگرام</string>
   <string name="NotificationContactNewPhoto">%1$s عکس پروفایلشو عوض کرد</string>
   <string name="NotificationInvitedToGroupByLink">%1$s با لینک دعوت به گروه %2$s اضافه شد</string>
   <string name="Reply">جواب</string>
@@ -309,7 +309,7 @@
   <!--contacts view-->
   <string name="SelectContact">مخاطبتو انتخاب کن</string>
   <string name="NoContacts">هیچ مخاطبی وجود نداره</string>
-  <string name="InviteText">سلام، بیا تو تلگرام :
+  <string name="InviteText">سلام، بیا تو گفتاگرام :
 https://telegram.org/dl</string>
   <string name="TodayAt">در</string>
   <string name="YesterdayAt">دیروز در</string>
@@ -341,7 +341,7 @@ https://telegram.org/dl</string>
   <string name="RevokeLink">لینکو باطل کن</string>
   <string name="CopyLink">کپی کردن لینک</string>
   <string name="ShareLink">لینک رو به اشتراک بذار</string>
-  <string name="LinkInfo">همه کاربرای تلگرام می تونن با استفاده از این لینک عضو گروه شما بشن</string>
+  <string name="LinkInfo">همه کاربرای گفتاگرام می تونن با استفاده از این لینک عضو گروه شما بشن</string>
   <!--set admins view-->
   <string name="SetAdminsTitle">مدیران چت</string>
   <string name="SetAdminsAll">همه اعضاء مدیر هستند</string>
@@ -356,7 +356,7 @@ https://telegram.org/dl</string>
   <string name="Notifications">اعلان ها</string>
   <string name="KickFromGroup">حذف از گروه</string>
   <string name="ConvertGroup">ارتقا به ابرگروه !</string>
-  <string name="ConvertGroupAlert">لطفا توجه کنید که اعضاء گروه برای مشاهده ابرگروه شما نیاز به بروز کردن اپلیکیشن تلگرام خود به اخرین نسخه خواهند داشت. آیا مطمئن به ارتقاء این گروه هستید؟ </string>
+  <string name="ConvertGroupAlert">لطفا توجه کنید که اعضاء گروه برای مشاهده ابرگروه شما نیاز به بروز کردن اپلیکیشن گفتاگرام خود به اخرین نسخه خواهند داشت. آیا مطمئن به ارتقاء این گروه هستید؟ </string>
   <string name="ConvertGroupInfo">‌‌‌‌&lt;! [CDATA[&lt;b&gt;]] &gt;تعداد اعضاء به حداکتر رسیده است‌‌‌‌&lt;! [CDATA[&lt;b&gt;]] &gt;\n\nجهت عبور از محدودیت و دریافت ویژگیهای اضافی، لطفا به ابرگروه ارتقاء دهید\n\n.ابرگروهها می توانند به %1$s دسترسی داشته باشند\n. اعضاء جدید میتوانند کل تاریخچه چت را مشاهده کنند\n. مدیران میتوانند پیامهای اعضاء را حذف کنند\n.هشدارها بطور پیشفرض خاموش میشوند</string>
   <!--contact info view-->
   <string name="ShareContact">به اشتراک بذار</string>
@@ -387,7 +387,7 @@ https://telegram.org/dl</string>
   <string name="UsernameInvalidShort">نام کاربری باید حداقل 5 کاراکتر باشه</string>
   <string name="UsernameInvalidLong">نام کاربری نباید از 32 کاراکتر بیشتر باشه</string>
   <string name="UsernameInvalidStartNumber">ببخشید، نام کاربری نمیتواند با عدد شروع بشه </string>
-  <string name="UsernameHelp">شما می تونید یک نام کاربری در <![CDATA[<b>]]> تلگرام <![CDATA[</b>]]> انتخاب کنید. اگر این کار رو بکنید  بقیه با این نام کاربری می تونند شما رو پیدا کنن و بدون داشتن شماره تلفنتون با شما در تماس باشن.
+  <string name="UsernameHelp">شما می تونید یک نام کاربری در <![CDATA[<b>]]> گفتاگرام <![CDATA[</b>]]> انتخاب کنید. اگر این کار رو بکنید  بقیه با این نام کاربری می تونند شما رو پیدا کنن و بدون داشتن شماره تلفنتون با شما در تماس باشن.
 <![CDATA[<br><br>]]> شما مجازید از <![CDATA[<b>]]>a–z<![CDATA[</b>]]>, <![CDATA[<b>]]>0–9<![CDATA[</b>]]> و زیرخط استفاده کنید. حداقل طول اون هم <![CDATA[<b>]]>5<![CDATA[</b>]]> کاراکتر هستش.</string>
   <string name="UsernameChecking">در حال بررسی نام کاربری...</string>
   <string name="UsernameAvailable">%1$s موجوده</string>
@@ -440,13 +440,13 @@ https://telegram.org/dl</string>
   <string name="SendByEnter">ارسال با اینتر</string>
   <string name="TerminateAllSessions">همه نشت‌های دیگه رو تموم کن</string>
   <string name="Events">رویدادها</string>
-  <string name="ContactJoined">مخاطب وارد تلگرام شد</string>
+  <string name="ContactJoined">مخاطب وارد گفتاگرام شد</string>
   <string name="Language">زبان</string>
   <string name="AskAQuestionInfo">
-لطفا توجه داشته باشید که پشتیبانی تلگرام توسط داوطلبان انجام میشه .ما تلاش می کنیم تا در اسرع وقت پاسخ بدیم اما ممکنه مدتی طول بکشه.<![CDATA[<br><br>]]>اینجا رو یه نگاهی بنداز <![CDATA[<a href=\"https://telegram.org/faq#general\">Telegram FAQ</a>]]>:پاسخ بیشتر سوالات در اینجا موجوده  <![CDATA[<a href=\"https://telegram.org/faq#troubleshooting\">عیب یابی</a>]]>.
+لطفا توجه داشته باشید که پشتیبانی گفتاگرام توسط داوطلبان انجام میشه .ما تلاش می کنیم تا در اسرع وقت پاسخ بدیم اما ممکنه مدتی طول بکشه.<![CDATA[<br><br>]]>اینجا رو یه نگاهی بنداز <![CDATA[<a href=\"https://telegram.org/faq#general\">Telegram FAQ</a>]]>:پاسخ بیشتر سوالات در اینجا موجوده  <![CDATA[<a href=\"https://telegram.org/faq#troubleshooting\">عیب یابی</a>]]>.
 </string>
   <string name="AskButton">یه داوطلب می خوام</string>
-  <string name="TelegramFaq">سوالات رایج تلگرام</string>
+  <string name="TelegramFaq">سوالات رایج گفتاگرام</string>
   <string name="TelegramFaqUrl">https://telegram.org/faq</string>
   <string name="DeleteLocalization">فایل زبان پاک بشه ؟</string>
   <string name="IncorrectLocalization">فایل زبان خرابه</string>
@@ -484,12 +484,12 @@ https://telegram.org/dl</string>
   <string name="NotificationsPriorityMax">حداکثر</string>
   <string name="RepeatNotificationsNever">هیچ وقت</string>
   <string name="RepeatNotifications">تکرار اطلاعیه</string>
-  <string name="PhoneNumberHelp">اینجا می‌تونی شماره‌ی تلگرام‌ت رو تغییر بدی.  اکانتت و تمام داده‌های ابریت — پیام‌ها، رسانه‌ها، مخاطبین و غیره به شماره‌ی جدیدت منتقل میشن.\n\n<![CDATA[<b>مهم:</b>]]> <![CDATA[<b>شماره‌ی جدیدت</b>]]> به دفترچه آدرس مخاطبین تلگرامت اضافه میشه، در صورتی که اونا شماره‌ی قبلی شما رو داشته باشن و شمام اونا رو تو تلگرام مسدود نکرده باشی.</string>
-  <string name="PhoneNumberAlert">تمامی مخاطبین تلگرامت  رو روی شماره جدید دریافت می کنی ، شماره های کسایی که گفت و گو می کردید و اونایی که حسابشون رو بلاک نکردی رو می تونی داشته باشی</string>
+  <string name="PhoneNumberHelp">اینجا می‌تونی شماره‌ی گفتاگرام‌ت رو تغییر بدی.  اکانتت و تمام داده‌های ابریت — پیام‌ها، رسانه‌ها، مخاطبین و غیره به شماره‌ی جدیدت منتقل میشن.\n\n<![CDATA[<b>مهم:</b>]]> <![CDATA[<b>شماره‌ی جدیدت</b>]]> به دفترچه آدرس مخاطبین گفتاگرامت اضافه میشه، در صورتی که اونا شماره‌ی قبلی شما رو داشته باشن و شمام اونا رو تو گفتاگرام مسدود نکرده باشی.</string>
+  <string name="PhoneNumberAlert">تمامی مخاطبین گفتاگرامت  رو روی شماره جدید دریافت می کنی ، شماره های کسایی که گفت و گو می کردید و اونایی که حسابشون رو بلاک نکردی رو می تونی داشته باشی</string>
   <string name="PhoneNumberChange">تغییر شماره</string>
   <string name="ChangePhoneNewNumber">شماره ی جدید</string>
   <string name="ChangePhoneHelp">ما یک پیامک به شماره جدیتون با کد تاییدیه ارسال می کنیم .</string>
-  <string name="ChangePhoneNumberOccupied">فعلا شماره %1$s  به تلگرامت وصله . لطفا قبل از مهاجرتت به شماره جدیدت اکانت قبلیت رو حذف کن .</string>
+  <string name="ChangePhoneNumberOccupied">فعلا شماره %1$s  به گفتاگرامت وصله . لطفا قبل از مهاجرتت به شماره جدیدت اکانت قبلیت رو حذف کن .</string>
   <string name="NotificationsOther">دیگه</string>
   <string name="NotificationsDisabled">غیرفعال</string>
   <string name="VibrationDisabled">غیرفعال</string>
@@ -510,7 +510,7 @@ https://telegram.org/dl</string>
   <string name="SessionsTitle">نشست های فعال</string>
   <string name="CurrentSession">نشست فعلی</string>
   <string name="NoOtherSessions">هیچ نشست فعال دیگری نیستش</string>
-  <string name="NoOtherSessionsInfo">شما می تونید از طریق موبایل تبلت یا رایانه شخصیتون و با استفاده از یه شماره تلفن وارد تلگرام بشین . همه داده هاتون بلافاصله همگام سازی میشن .</string>
+  <string name="NoOtherSessionsInfo">شما می تونید از طریق موبایل تبلت یا رایانه شخصیتون و با استفاده از یه شماره تلفن وارد گفتاگرام بشین . همه داده هاتون بلافاصله همگام سازی میشن .</string>
   <string name="OtherSessions">نشست های فعال</string>
   <string name="SessionsInfo">کنترل نشست ها روی دستگاه های دیگه</string>
   <string name="TerminateSessionInfo">برای پایان دادن روی نشست ضربه بزن</string>
@@ -519,8 +519,8 @@ https://telegram.org/dl</string>
   <!--passcode view-->
   <string name="Passcode">قفل با گذرواژه</string>
   <string name="ChangePasscode">تغییر  گذرواژه</string>
-  <string name="ChangePasscodeInfo">وقتی که یه گذرواژه اضافی تنظیم می کنی،یه آیکن قفل  بالای صفحه میادش . برای قفل کردن  یا باز کردن برنامه تلگرام به اون ضربه بزن.\n\n توجه:اگر گذرواژه خودت رو فراموش کنی مجبور میشی برنامه رو دوباره نصب کنی و این جوری تمام گفت و گوهای محرمانت پاک میشن</string>
-  <string name="ChangePasscodeAlert">الان شما یه آیکن قفل بالای صفحه چت هات می بینی . روش ضربه بزن تا برنامه تلگرامت رو با یه گذرواژه قفل کنی </string>
+  <string name="ChangePasscodeInfo">وقتی که یه گذرواژه اضافی تنظیم می کنی،یه آیکن قفل  بالای صفحه میادش . برای قفل کردن  یا باز کردن برنامه گفتاگرام به اون ضربه بزن.\n\n توجه:اگر گذرواژه خودت رو فراموش کنی مجبور میشی برنامه رو دوباره نصب کنی و این جوری تمام گفت و گوهای محرمانت پاک میشن</string>
+  <string name="ChangePasscodeAlert">الان شما یه آیکن قفل بالای صفحه چت هات می بینی . روش ضربه بزن تا برنامه گفتاگرامت رو با یه گذرواژه قفل کنی </string>
   <string name="PasscodePIN">کد پین</string>
   <string name="PasscodePassword">گذرواژه</string>
   <string name="EnterCurrentPasscode">گذواژه فعلی رو وارد کن</string>
@@ -615,7 +615,7 @@ https://telegram.org/dl</string>
   <string name="YourEmailInfo">لطفا ایمیل درست خودت رو وارد کن.این تنها راهیه که میشه رمزعبور فراموش شده خودت رو بازیابی کنی.</string>
   <string name="YourEmailSkip">رد شو</string>
   <string name="YourEmailSkipWarning">هشدار</string>
-  <string name="YourEmailSkipWarningText">جدی جدی اگه رمزت رو فراموش کردی دسترسیت به حساب تلگرامت رو از دست میدیا. هیچ راه برگشتی وجود نداره ها !</string>
+  <string name="YourEmailSkipWarningText">جدی جدی اگه رمزت رو فراموش کردی دسترسیت به حساب گفتاگرامت رو از دست میدیا. هیچ راه برگشتی وجود نداره ها !</string>
   <string name="YourEmailAlmostThere">تقریبا تمومه!</string>
   <string name="YourEmailAlmostThereText">لطفا ایمیل خودت رو برای راه اندازی تایید دو مرحله ای بررسی کن ( اگه ایمیلو پیدا نکردی پوشه هرزنامه ها یا اسپم رو هم بررسی کن )</string>
   <string name="YourPasswordSuccess">موفق شدی!</string>
@@ -649,7 +649,7 @@ https://telegram.org/dl</string>
   <string name="PasswordRecovery">بازیابی گذرواژه</string>
   <string name="PasswordCode">کد</string>
   <string name="PasswordReset">گذرواژه غیرفعال شد.</string>
-  <string name="EnabledPasswordText">شما تایید دو مرحله ای را فعال کردی.\nبرای ورود به حساب تلگرامت به این گذرواژه نیاز پیدا می کنی.</string>
+  <string name="EnabledPasswordText">شما تایید دو مرحله ای را فعال کردی.\nبرای ورود به حساب گفتاگرامت به این گذرواژه نیاز پیدا می کنی.</string>
   <string name="PendingEmailText">ایمیل بازیابی شما %1$s هنوز فعال نشده  و در انتظار تاییده.</string>
   <!--privacy settings-->
   <string name="PrivacySettings">حریم خصوصی و امنیت</string>
@@ -666,7 +666,7 @@ https://telegram.org/dl</string>
   <string name="SecurityTitle">امنیت</string>
   <string name="DeleteAccountTitle">پاک کننده خودکار حساب کاربری</string>
   <string name="DeleteAccountIfAwayFor">اگر برای این مدت نبودید</string>
-  <string name="DeleteAccountHelp">اگه حداقل تو این بازه زمانی وارد تلگرام نشی حساب کاربری شما با همه اعضا و گروه ها و پیام هاش پاک میشن.</string>
+  <string name="DeleteAccountHelp">اگه حداقل تو این بازه زمانی وارد گفتاگرام نشی حساب کاربری شما با همه اعضا و گروه ها و پیام هاش پاک میشن.</string>
   <string name="DeleteAccountNowConfirmation">می خوای حساب کاربریتو پاک کنی ؟</string>
   <string name="LastSeenHelp">چه کسی می تونه آخرین زمان بازدید شما را ببینه رو تغییر بدید .</string>
   <string name="LastSeenTitle">چه کسی می تونه آخرین زمان بازدید شما را ببینه ؟</string>
@@ -745,7 +745,7 @@ https://telegram.org/dl</string>
   <string name="ActionAddUserYou">un1 شما رو اضافه کرد</string>
   <string name="ActionAddUserSelf">un1  به گروه برگشت</string>
   <string name="ActionAddUserSelfYou">شما به گروه برگشتید</string>
-  <string name="UnsuppotedMedia">این پیام در نسخه تلگرام شما پشتیبانی نمیشه.برای مشاهده پیام ،برنامه را بروز رسانی کن:https://telegram.org/update</string>
+  <string name="UnsuppotedMedia">این پیام در نسخه گفتاگرام شما پشتیبانی نمیشه.برای مشاهده پیام ،برنامه را بروز رسانی کن:https://telegram.org/update</string>
   <string name="AttachPhoto">عکس</string>
   <string name="AttachVideo">ویدیو</string>
   <string name="AttachLocation">مکان</string>
@@ -768,7 +768,7 @@ https://telegram.org/dl</string>
   <string name="NoPlayerInstalled">شما هیچ برنامه ای برای پخش فیلم نداری یکی نصب کن بعد ادامه بده .</string>
   <string name="NoMailInstalled">لطفا یه ایمیل به sms@stel.com ارسال کن و مشکلتو توضیح بده</string>
   <string name="NoHandleAppInstalled">شما هیچ برنامه برای باز کردن  \'%1$s\', نداری . باید یکی نصب کنی</string>
-  <string name="InviteUser">اینی که می گی که تلگرام نداره! می خوای دعوتش کنی ؟</string>
+  <string name="InviteUser">اینی که می گی که گفتاگرام نداره! می خوای دعوتش کنی ؟</string>
   <string name="AreYouSure">مطمئنی ؟</string>
   <string name="AddToTheGroupTitle">آیا %1$s به چت %2$s افزوده شود؟ </string>
   <string name="AddToTheGroupForwardCount">تعداد پیام های قبلی برای ارسال:</string>
@@ -777,7 +777,7 @@ https://telegram.org/dl</string>
   <string name="ForwardMessagesTo">می خوای پیام ها رو به %1$s منتقل کنی ؟</string>
   <string name="SendMessagesTo">پیام ها رو به %1$s ارسال کنم؟</string>
   <string name="SendContactTo">تماس به %1$s ارسال گردد؟ </string>
-  <string name="AreYouSureLogout">مطمئنی می خوای خارج بشی ؟  \n\nNote شما می تونی از تلگرام  تو همه دستگاه های خودت به صورت یکپارچه استفاده کنی ، با خروج از سیستم چت های امنیتی از بین میره .</string>
+  <string name="AreYouSureLogout">مطمئنی می خوای خارج بشی ؟  \n\nNote شما می تونی از گفتاگرام  تو همه دستگاه های خودت به صورت یکپارچه استفاده کنی ، با خروج از سیستم چت های امنیتی از بین میره .</string>
   <string name="AreYouSureSessions">مطمئنی می خوای همه نست های دیگه رو تموم کنی ؟</string>
   <string name="AreYouSureDeleteAndExit">مطمئنی که قصد حذف و ترک این گروه رو داری؟</string>
   <string name="AreYouSureDeleteThisChat">مطمئنی که قصد حذف این گفت و گو رو داری؟</string>
@@ -793,16 +793,16 @@ https://telegram.org/dl</string>
   <string name="SendContactToGroup">تماس به %1$s ارسال گردد؟ </string>
   <string name="ForwardMessagesToGroup">پیام‌ها به %1$s منتقل بشه؟</string>
   <string name="FeatureUnavailable">ببخشید، ما لیاقت نداریم این امکان رو توی ایران پشتیبانی کنیم ! تو رو خدا ما رو ببخشید . شرمنده ایم !</string>
-  <string name="NoUsernameFound">هیچ حساب تلگرامی با این نام کاربری وجود نداره.</string>
+  <string name="NoUsernameFound">هیچ حساب گفتاگرامی با این نام کاربری وجود نداره.</string>
   <string name="BotCantJoinGroups">این ربات نمی تونه به گروه ها ملحق بشه.</string>
   <!--permissions-->
-  <string name="PermissionContacts">برای اینکه بتونی با دوستات تو هر دستگاهی ارتباط داشته باشی ؛ تلگرام نیاز داره تا بتونه مخاطب هات رو ببینه</string>
-  <string name="PermissionStorage">تلگرام برای ارسال و ذخیره تصاویر، ویدئو ها، موسیقی، و دیگر انواع رسانه نیاز به داشتن دسترسی به فضای ذخیره سازی شما دارد</string>
-  <string name="PermissionNoAudio">تلگرام جهت ارسال پیامهای صوتی نیاز بداشتن دسترسی به میکروفون/صدابر شما دارد</string>
-  <string name="PermissionNoLocation">تلگرام جهت اشتراک گذاری موقعیت شما با دوستانتان نیاز بداشتن دسترسی به محل سکونت شما دارد</string>
+  <string name="PermissionContacts">برای اینکه بتونی با دوستات تو هر دستگاهی ارتباط داشته باشی ؛ گفتاگرام نیاز داره تا بتونه مخاطب هات رو ببینه</string>
+  <string name="PermissionStorage">گفتاگرام برای ارسال و ذخیره تصاویر، ویدئو ها، موسیقی، و دیگر انواع رسانه نیاز به داشتن دسترسی به فضای ذخیره سازی شما دارد</string>
+  <string name="PermissionNoAudio">گفتاگرام جهت ارسال پیامهای صوتی نیاز بداشتن دسترسی به میکروفون/صدابر شما دارد</string>
+  <string name="PermissionNoLocation">گفتاگرام جهت اشتراک گذاری موقعیت شما با دوستانتان نیاز بداشتن دسترسی به محل سکونت شما دارد</string>
   <string name="PermissionOpenSettings">تنظیمات</string>
   <!--Intro view-->
-  <string name="Page1Title">تلگرام</string>
+  <string name="Page1Title">گفتاگرام</string>
   <string name="Page2Title">سریع</string>
   <string name="Page3Title">رایگان</string>
   <string name="Page4Title">امن</string>
@@ -810,12 +810,12 @@ https://telegram.org/dl</string>
   <string name="Page6Title">بر پایه ابری</string>
   <string name="Page7Title">خصوصی</string>
   <string name="Page1Message"><![CDATA[<b>سریع ترین</b>]]> برنامه پیارم رسان جهان .<![CDATA[<br/>]]> <![CDATA[<b>رایگان</b>]]> و <![CDATA[<b>امنه</b>]]></string>
-  <string name="Page2Message"><![CDATA[<b>تلگرام</b>]]> خیلی سریع تر از <![CDATA[<br/>]]>بقیه برنامه ارسال می کنه</string>
-  <string name="Page3Message"><![CDATA[<b>تلگرام</b>]]> برای همیشه رایگانه و تبلیغی نداره<![CDATA[<br/>]]>هیچ هزینه اشتراکی هم نمی خواد</string>
-  <string name="Page4Message"><![CDATA[<b>تلگرام</b>]]> پیام های شما رو <![CDATA[<br/>]]>از حمله هکرها حفظ می کنه</string>
-  <string name="Page5Message"><![CDATA[<b>تلگرام</b>]]> هیچ محدودیتی برای  <![CDATA[<br/>]]>حجم فایل ها و گفت و گو ها نداره</string>
-  <string name="Page6Message"><![CDATA[<b>تلگرام</b>]]>به شما این اجازه رو میده که<![CDATA[<br/>]]>با دستگاه های مختلف وصل بشید</string>
-  <string name="Page7Message"><![CDATA[<b>تلگرام</b>]]> پیام ها رو به طور وحشتناکی  <![CDATA[<br/>]]>رمز نگاری می کنه و شما می تونید اونا رو از بین ببرید</string>
+  <string name="Page2Message"><![CDATA[<b>گفتاگرام</b>]]> خیلی سریع تر از <![CDATA[<br/>]]>بقیه برنامه ارسال می کنه</string>
+  <string name="Page3Message"><![CDATA[<b>گفتاگرام</b>]]> برای همیشه رایگانه و تبلیغی نداره<![CDATA[<br/>]]>هیچ هزینه اشتراکی هم نمی خواد</string>
+  <string name="Page4Message"><![CDATA[<b>گفتاگرام</b>]]> پیام های شما رو <![CDATA[<br/>]]>از حمله هکرها حفظ می کنه</string>
+  <string name="Page5Message"><![CDATA[<b>گفتاگرام</b>]]> هیچ محدودیتی برای  <![CDATA[<br/>]]>حجم فایل ها و گفت و گو ها نداره</string>
+  <string name="Page6Message"><![CDATA[<b>گفتاگرام</b>]]>به شما این اجازه رو میده که<![CDATA[<br/>]]>با دستگاه های مختلف وصل بشید</string>
+  <string name="Page7Message"><![CDATA[<b>گفتاگرام</b>]]> پیام ها رو به طور وحشتناکی  <![CDATA[<br/>]]>رمز نگاری می کنه و شما می تونید اونا رو از بین ببرید</string>
   <string name="StartMessaging">شروع پیام رسانی</string>
   <!--plural-->
   <string name="Online_zero">%1$d آنلاین</string>
