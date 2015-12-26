@@ -43,7 +43,7 @@ public class DrawerLayoutAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return UserConfig.isClientActivated() ? 11 : 0;
+        return UserConfig.isClientActivated() ? 14 : 0;
     }
 
     @Override
@@ -95,8 +95,14 @@ public class DrawerLayoutAdapter extends BaseAdapter {
             }else if (i == 8) {
                     actionCell.setTextAndIcon(LocaleController.getString("Goftagram", R.string.channel_drawer_menu_name), R.drawable.notification);
             } else if (i == 9) {
-                actionCell.setTextAndIcon(LocaleController.getString("Settings", R.string.Settings), R.drawable.menu_settings);
+                actionCell.setTextAndIcon(LocaleController.getString("Submit Your Channel", R.string.drawer_new_channel_item_text), R.drawable.ic_note_add_black_24dp);
             } else if (i == 10) {
+                actionCell.setTextAndIcon(LocaleController.getString("Settings", R.string.Settings), R.drawable.menu_settings);
+            } else if (i == 11) {
+                actionCell.setTextAndIcon(LocaleController.getString("Contact us", R.string.drawer_contact_us), R.drawable.ic_account_circle_black_24dp);
+            } else if (i == 12) {
+                actionCell.setTextAndIcon(LocaleController.getString("About us", R.string.drawer_about_us_item_text), R.drawable.ic_group_black_24dp);
+            } else if (i == 13) {
                 actionCell.setTextAndIcon(LocaleController.getString("TelegramFaq", R.string.TelegramFaq), R.drawable.menu_help);
             }
         }

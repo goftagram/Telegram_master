@@ -325,6 +325,9 @@
 
         <meta-data android:name="com.google.android.gms.car.application" android:resource="@xml/automotive_app_desc" />
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="3686c9cdfe7fe4286590beabf95d4e414ace8745" />
     </application>
 
 </manifest>

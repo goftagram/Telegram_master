@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.telephony.TelephonyManager;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.dd.CircularProgressButton;
 import com.goftagram.telegram.goftagram.activity.GoftagramMainActivity;
+import com.goftagram.telegram.goftagram.activity.NewChannelActivity;
 import com.goftagram.telegram.goftagram.application.model.MainUser;
 import com.goftagram.telegram.goftagram.application.usecases.signuplogin.MainUserDao;
 import com.goftagram.telegram.goftagram.application.usecases.signuplogin.UserController;
@@ -35,6 +36,7 @@ public class SignUpFragment extends BaseFragment {
 
     public static final String LOG_TAG = LogUtils.makeLogTag(SignUpFragment.class.getSimpleName());
 
+    public static final String EXTRA_MUST_GO_TO_NEW_CHANNEL_ACTIVITY = "Extra_Must_Go_To_New_Channel_Activity";
 
 
     private ImageView mBackground;
@@ -45,15 +47,27 @@ public class SignUpFragment extends BaseFragment {
     String mImei;
     String mPhoneNumber;
 
-    EditText mFirstNameEditText,mLastNameEditText,mPhoneNumberEditText;
-
     int mSignUpRequestId;
     boolean mHasSentRequest;
+
+    boolean mMustGoToNewChannelActivity;
+
+
+    public static SignUpFragment newInstance(boolean mustGoToNewChannelActivity) {
+
+        SignUpFragment fragment = new SignUpFragment();
+        Bundle argBundle = new Bundle();
+        argBundle.putBoolean(EXTRA_MUST_GO_TO_NEW_CHANNEL_ACTIVITY, mustGoToNewChannelActivity);
+        fragment.setArguments(argBundle);
+
+        return fragment;
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mMustGoToNewChannelActivity = getArguments().getBoolean(EXTRA_MUST_GO_TO_NEW_CHANNEL_ACTIVITY);
     }
 
     @Nullable
@@ -62,17 +76,18 @@ public class SignUpFragment extends BaseFragment {
 
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
 
-        mFirstNameEditText      = (EditText) view.findViewById(R.id.editText_firstName);
-        mLastNameEditText       = (EditText) view.findViewById(R.id.editText_lastName);
-        mPhoneNumberEditText    = (EditText) view.findViewById(R.id.editText_phoneNumber);
+
+
+
         TextView title          = (TextView)view.findViewById(R.id.title);
+        TextView termsOfUse          = (TextView)view.findViewById(R.id.textView_term_of_use);
+        termsOfUse.setMovementMethod(new ScrollingMovementMethod());
         mCircularProgressButton = (CircularProgressButton) view.findViewById(R.id.btnWithText);
         mBackground = (ImageView) view.findViewById(R.id.signupfragment_background);
 
-        FontUtils.settingFont(mFirstNameEditText,getActivity());
-        FontUtils.settingFont(mLastNameEditText,getActivity());
-        FontUtils.settingFont(mPhoneNumberEditText,getActivity());
+
         FontUtils.settingFont(title, getActivity());
+        FontUtils.settingFont(termsOfUse, getActivity());
         FontUtils.settingFont(mCircularProgressButton, getActivity());
 
 
@@ -106,9 +121,6 @@ public class SignUpFragment extends BaseFragment {
                     return;
                 }
 
-                mFirstName = mFirstNameEditText.getText().toString().trim();
-                mLastName = mLastNameEditText.getText().toString().trim();
-                mPhoneNumber = mPhoneNumberEditText.getText().toString().trim();
 
 
                 mCircularProgressButton.setIndeterminateProgressMode(true);
@@ -132,9 +144,8 @@ public class SignUpFragment extends BaseFragment {
 
         MainUser mainUser = MainUserDao.getInstance(getActivity()).getMainUser();
         if(mainUser.hasLogIn()){
-            Intent intent = new Intent(getActivity(), GoftagramMainActivity.class);
-            getActivity().startActivity(intent);
-            getActivity().finish();
+            termsOfUse.setVisibility(View.GONE);
+            goToNextActivity(false);
         }
 
         return view;
@@ -211,9 +222,7 @@ public class SignUpFragment extends BaseFragment {
                 sHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(getActivity(), GoftagramMainActivity.class);
-                        getActivity().startActivity(intent);
-                        getActivity().finish();
+                        goToNextActivity(true);
 
                     }
                 }, 2000);
@@ -238,5 +247,16 @@ public class SignUpFragment extends BaseFragment {
     }
 
 
+    private void goToNextActivity(boolean hasJustSignUp){
+        Intent intent = null;
+        if(mMustGoToNewChannelActivity){
+            intent = new Intent(getActivity(), NewChannelActivity.class);
+        }else{
+            intent = new Intent(getActivity(), GoftagramMainActivity.class);
+        }
+        if(hasJustSignUp)intent.putExtra(NewChannelActivity.EXTRA_MUST_SHOW_ADD_CHANNEL_RULES,false);
+        getActivity().startActivity(intent);
+        getActivity().finish();
+    }
 
 }

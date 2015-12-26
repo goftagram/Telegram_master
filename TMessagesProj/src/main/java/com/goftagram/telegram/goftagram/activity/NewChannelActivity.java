@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
@@ -31,11 +32,14 @@ import android.widget.Toast;
 import com.dd.CircularProgressButton;
 import com.goftagram.telegram.goftagram.adapter.CategorySpinnerAdapter;
 import com.goftagram.telegram.goftagram.application.model.Category;
+import com.goftagram.telegram.goftagram.application.usecases.absclasses.absget.AbsGetPresenter;
+import com.goftagram.telegram.goftagram.application.usecases.getcategory.contract.GetCategoryViewModel;
+import com.goftagram.telegram.goftagram.application.usecases.getcategory.implementation.GetCategoryPresenterImp;
 import com.goftagram.telegram.goftagram.myconst.Keys;
 import com.goftagram.telegram.goftagram.network.api.IonClient;
 import com.goftagram.telegram.goftagram.provider.GoftagramContract;
 import com.goftagram.telegram.goftagram.util.Dialogs;
-import com.goftagram.telegram.goftagram.util.UniqueIdGenerator;
+import com.goftagram.telegram.goftagram.util.NetworkUtils;
 import com.goftagram.telegram.goftagram.util.Utils;
 import com.goftagram.telegram.messenger.R;
 import com.koushikdutta.async.future.FutureCallback;
@@ -52,11 +56,18 @@ import java.util.List;
 /**
  * Created by mhossein on 10/5/15.
  */
-public class NewChannelActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class NewChannelActivity extends BaseActivity implements
+        LoaderManager.LoaderCallbacks<Cursor>,
+        GetCategoryViewModel {
+
+    public static final String EXTRA_MUST_SHOW_ADD_CHANNEL_RULES = "Extra_Must_Show_Add_Channel_Rules";
+    public static final String EXTRA_TRANSACTION_ID = "transaction_id";
+    public static final int INVALID_TRANSACTION_ID = -1;
+    AbsGetPresenter mPresenter;
 
     private Uri coverFileUri; // file url to store image/video
 
-    private RoundedImageView  coverImageView;
+    private RoundedImageView coverImageView;
 
     private Toolbar toolbar;
 
@@ -94,25 +105,31 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_channel);
 
-        Dialogs.getInstanse().showRulesOfAddChannelDialog(this);
+        boolean mustShowAddChannelRules = getIntent().getBooleanExtra(EXTRA_MUST_SHOW_ADD_CHANNEL_RULES, true);
+        if (mustShowAddChannelRules) Dialogs.getInstanse().showRulesOfAddChannelDialog(this);
 
-        container = (CoordinatorLayout)findViewById(R.id.main_content);
 
-        coverImageView =(RoundedImageView)findViewById(R.id.backdrop);
+        mPresenter = GetCategoryPresenterImp.getInstance(this);
 
-        emptyFrame = (LinearLayout)findViewById(R.id.empty_frame);
+
+        container = (CoordinatorLayout) findViewById(R.id.main_content);
+
+        coverImageView = (RoundedImageView) findViewById(R.id.backdrop);
+
+        emptyFrame = (LinearLayout) findViewById(R.id.empty_frame);
         emptyFrame.getLayoutParams().height = Utils.GetScreenWidthDP(this) / 3;
 
 
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
 
-        fab = (FloatingActionButton)findViewById(R.id.select_image_fab);
+        fab = (FloatingActionButton) findViewById(R.id.select_image_fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +140,7 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
             }
         });
 
-        categorySpinner = (AppCompatSpinner)findViewById(R.id.category_spinner);
+        categorySpinner = (AppCompatSpinner) findViewById(R.id.category_spinner);
 
         categorySpinnerAdapter = new CategorySpinnerAdapter(this, R.layout.category_spinner_row, new Category[]{});
 
@@ -136,11 +153,11 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
             }
         }
 
-        usernameTIL     = (EditText)findViewById(R.id.activity_new_channel_username);
-        descriptionTIL  = (EditText)findViewById(R.id.activity_new_channel_description);
-        titleTIL        = (EditText)findViewById(R.id.activity_new_channel_title);
-        tagsTIL         = (EditText)findViewById(R.id.activity_new_channel__add_tags_field);
-        accessSwitch    = (SwitchCompat)findViewById(R.id.access_switch_view);
+        usernameTIL = (EditText) findViewById(R.id.activity_new_channel_username);
+        descriptionTIL = (EditText) findViewById(R.id.activity_new_channel_description);
+        titleTIL = (EditText) findViewById(R.id.activity_new_channel_title);
+        tagsTIL = (EditText) findViewById(R.id.activity_new_channel__add_tags_field);
+        accessSwitch = (SwitchCompat) findViewById(R.id.access_switch_view);
 
         usernameTIL.addTextChangedListener(new TextWatcher() {
             @Override
@@ -155,13 +172,13 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
 
                 Log.i(getClass().getName(), "charSequence = " + charSequence);
 
-                if(charSequence.length() > 0) {
-                    if(charSequence.toString().endsWith(" ")){
+                if (charSequence.length() > 0) {
+                    if (charSequence.toString().endsWith(" ")) {
                         usernameTIL.setText(usernameTIL.getText().toString().subSequence(0, usernameTIL.getText().toString().length() - 1));
                         usernameTIL.setSelection(usernameTIL.getText().toString().length());
                     }
 
-                    if(charSequence.length() < 12){
+                    if (charSequence.length() < 12) {
                         usernameTIL.setText("telegram.me/");
                         usernameTIL.setSelection(usernameTIL.getText().toString().length());
                     }
@@ -171,8 +188,7 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
 
                 int position = url.toLowerCase().indexOf("telegramme/", 12);
 
-                if(position != -1)
-                {
+                if (position != -1) {
                     url = url.replace(url.substring(12, 12 + (position - 12) + "telegramme/".length()), "");
                     usernameTIL.setText(url);
 
@@ -190,26 +206,33 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
         accessSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
+                if (b) {
                     compoundButton.setText(R.string.public_access_switch_text);
-                }else{
+                } else {
                     compoundButton.setText(R.string.private_access_switch_text);
                 }
 
             }
         });
 
-        submitBtn       = (CircularProgressButton)findViewById(R.id.btnWithText);
+        submitBtn = (CircularProgressButton) findViewById(R.id.btnWithText);
 
         getSupportLoaderManager().initLoader(LOADER_ID, null, this);
 
-        mTransactionId = UniqueIdGenerator.getInstance().getNewId();
+
+
+        if(savedInstanceState != null && savedInstanceState.containsKey(EXTRA_TRANSACTION_ID)){
+            mTransactionId = savedInstanceState.getInt(EXTRA_TRANSACTION_ID);
+        }else{
+            mTransactionId = INVALID_TRANSACTION_ID;
+        }
+        mPresenter = GetCategoryPresenterImp.getInstance(this);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
         }
@@ -218,17 +241,10 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
 
-        if (coverFileUri != null) {
-            outState.putString(Keys.IMG_URI, coverFileUri.toString());
-        }
-    }
 
     /* (non-Javadoc)
-	 * @see android.app.Activity#onActivityResult(int, int, android.content.Intent)
+     * @see android.app.Activity#onActivityResult(int, int, android.content.Intent)
 	 */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -269,7 +285,7 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
                     resImgPath = data.getStringExtra(Keys.IMG_URI);
 
                     // Show the result
-                    if(resImgPath != null){
+                    if (resImgPath != null) {
                         SetImage(resImgPath);
                     }
 
@@ -285,6 +301,7 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
 
     /**
      * Set the image into image view
+     *
      * @param path Image path
      */
     private void SetImage(String path) {
@@ -331,7 +348,6 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
     }
 
 
-
     /**
      * Show picture selection dialog
      */
@@ -353,7 +369,6 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
                 });
 
 
-
         // Select picture from camera
         myAlertDialog.setNegativeButton(R.string.select_avatar_dlg_camera,
                 new DialogInterface.OnClickListener() {
@@ -372,7 +387,7 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
         myAlertDialog.show();
     }
 
-    public void submit(View v){
+    public void submit(View v) {
 
         submitBtn.setIndeterminateProgressMode(true);
         submitBtn.setProgress(50);
@@ -385,12 +400,12 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
 
         fields[3] = tagsTIL.getText().toString();
         fields[4] = resImgPath;
-        fields[5] = "https://" +usernameTIL.getText().toString();
+        fields[5] = "https://" + usernameTIL.getText().toString();
         fields[6] = accessSwitch.isChecked() ? "1" : "0";
 
-        if(!TextUtils.isEmpty(resImgPath)){
+        if (!TextUtils.isEmpty(resImgPath)) {
             IonClient.getInstance().AddChannel(this, submitBtn, fields);
-        }else{
+        } else {
             submitBtn.setProgress(-1);
             submitBtn.setErrorText(getString(R.string.error_selection_image));
 
@@ -408,26 +423,43 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         Uri uri = GoftagramContract.CategoryEntry.buildCategoryUriWithTransactionId(mTransactionId);
-        return new CursorLoader(this, uri , null, null, null, null);
+        return new CursorLoader(this, uri, null, null, null, null);
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        if(data.getCount() == 0)finish();
+        if (data.getCount() == 0) {
+            mPresenter.unregister(this, mTransactionId);
+            mTransactionId = mPresenter.getAsync(this, null);
+            return;
+        }
         categorySpinnerAdapter.setList(data);
         categorySpinnerAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        if(mTransactionId != INVALID_TRANSACTION_ID){
+            outState.putInt(EXTRA_TRANSACTION_ID,mTransactionId);
+        }
+        if (coverFileUri != null) {
+            outState.putString(Keys.IMG_URI, coverFileUri.toString());
+        }
+        super.onSaveInstanceState(outState);
+    }
+
+
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
     }
 
-    public void onEventMainThread(AddChannelMessage event){
+    public void onEventMainThread(AddChannelMessage event) {
 
 
-        for (String message : event.getMessages()){
-            if(event.getStatus().equals(Keys.FAIL)){
+        for (String message : event.getMessages()) {
+            if (event.getStatus().equals(Keys.FAIL)) {
 //                Alerts.showSupportErrorSnackbar(container, message);
 
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
@@ -441,7 +473,7 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
                         submitBtn.setProgress(0);
                     }
                 }, 4000);
-            }else{
+            } else {
 //                Alerts.showSupportMessageSnackbar(container, message);
 
                 submitBtn.setProgress(100);
@@ -461,7 +493,7 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
 
         private String status;
 
-        public AddChannelMessage(List<String> messages, String status){
+        public AddChannelMessage(List<String> messages, String status) {
             this.messages = messages;
             this.status = status;
         }
@@ -482,4 +514,59 @@ public class NewChannelActivity extends BaseActivity implements LoaderManager.Lo
             this.status = status;
         }
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mTransactionId != INVALID_TRANSACTION_ID) {
+            mPresenter.register(this, mTransactionId);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mTransactionId != INVALID_TRANSACTION_ID) {
+            mPresenter.unregister(this, mTransactionId);
+        }
+
+    }
+
+
+    @Override
+    public void showLoading() {
+        Toast.makeText(this, getString(R.string.wait_till_get_category_list), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onSuccess(String message, int totalItems) {
+        mTransactionId = INVALID_TRANSACTION_ID;
+        if (totalItems == 0) {
+            Toast.makeText(this, getString(R.string.empty_list_rootView), Toast.LENGTH_LONG).show();
+            finish();
+        }
+    }
+
+    @Override
+    public void onFail(String message, int totalItems) {
+        mTransactionId = INVALID_TRANSACTION_ID;
+        if (NetworkUtils.isOnline(this)) {
+            final Snackbar snackbar = Snackbar.make(container,
+                    message, Snackbar.LENGTH_INDEFINITE
+            );
+            snackbar.setAction(getString(R.string.retry), new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mTransactionId = mPresenter.getAsync(this, null);
+                    snackbar.dismiss();
+                }
+            });
+            snackbar.show();
+
+        }
+    }
+
+
+
 }

@@ -3,8 +3,8 @@
 
 
 <resources>
-    <string name="AppName">Goftagram</string>
-    <string name="AppNameBeta">Goftagram beta</string>
+    <string name="AppName">گفتاگرام</string>
+    <string name="AppNameBeta">گفتاگرام بتا</string>
     <string name="LanguageName">English</string>
     <string name="LanguageNameInEnglish">English</string>
     <string name="LanguageCode">en</string>
@@ -1058,7 +1058,7 @@
 
 
     <string name ="app_name">گفتاگرام</string>
-    <string name="channel_drawer_menu_name">کانالچه</string>
+    <string name="channel_drawer_menu_name">کانال بازار</string>
     <string name="action_search">search</string>
 
 
@@ -1080,6 +1080,7 @@
     <string name="fragment_sign_up_btn_text">ورود</string>
 
     <string name="submit">ثبت</string>
+    <string name="wait_till_get_category_list">لطفا صبر کنید تا لیست دسته‌ها دریافت شود</string>
 
     <string name="server_unknown_format">خطا در داده‌ی سرور</string>
     <string name="authentication_error">خطا در لاگین</string>
@@ -1140,7 +1141,7 @@
     <string name="rules_title">قوانین ثبت کانال</string>
 
 
-    <string name="rules_of_add_channel">کانال‌های زیر در اپلیکیشن معرفی نمی شوند.لطفا معرفی نفرمایید:\n۱. کانال‌هایی که محتوای غیر اخلاقی دارند یا کانال‌هایی با محتوای غیر اخلاقی را تبلیغ می کنند.\n۲. کانال‌هایی که ضد اسلام فرهنگ و قانون ایران و موازین اجتماعی فعالیت می کنند.\n۳. همه کانال‌هایی که از جهتی مناسب استفاده همه سنین یا اقشار جامعه نباشند.\n۴. کانال‌هایی که محتوای خود را بدون ذکر منبع از کانالی دیگر کپی می کنند یا نرم افزارهای پولی را رایگان عرضه می کنند.</string>
+    <string name="rules_of_add_channel">کانال‌های زیر در اپلیکیشن معرفی نمی‌شوند. لطفا معرفی نفرمایید: \n\n1. کانال‌هایی که محتوای غیر اخلاقی دارند یا کانال‌هایی با محتوای غیر اخلاقی را تبلیغ می‌کنند. \n\n2. کانال‌هایی که ضد اسلام فرهنگ و قانون ایران و موازین اجتماعی فعالیت می‌کنند. \n\n3. همه‌ی کانال‌هایی که از جهتی مناسب استفاده همه‌ی سنین یا اقشار جامعه نباشد. \n\n4. کانال‌هایی که محتوای خود را بدون ذکر منبع از کانالی دیگر کپی می‌کنند یا نرم‌افزارهای پولی را رایگان عرضه می‌کنند.</string>
 
     <!-- Dialogs-->
     <!-- Terms Of Use Dialog-->

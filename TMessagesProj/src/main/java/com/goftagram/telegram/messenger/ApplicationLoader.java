@@ -268,6 +268,7 @@ public class ApplicationLoader extends Application {
     public void onCreate() {
         super.onCreate();
 
+
         if (Build.VERSION.SDK_INT < 11) {
             java.lang.System.setProperty("java.net.preferIPv4Stack", "true");
             java.lang.System.setProperty("java.net.preferIPv6Addresses", "false");

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment  xmlns:android="http://schemas.android.com/apk/res/android"
-    android:name="com.goftagram.telegram.goftagram.fragment.SignUpFragment"
-    android:id="@+id/sign_up_fragment"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FrameLayout_SignUpFragment_FragmentContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    >
+</FrameLayout>

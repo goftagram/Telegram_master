@@ -11,7 +11,7 @@ import com.goftagram.telegram.goftagram.application.usecases.postusermetadata.co
 import com.goftagram.telegram.goftagram.application.usecases.signuplogin.UserController;
 import com.goftagram.telegram.goftagram.helper.ServiceHelper;
 import com.goftagram.telegram.goftagram.network.HttpManager;
-import com.goftagram.telegram.goftagram.network.api.message.SendUserExtraInfoNetworkMessage;
+import com.goftagram.telegram.goftagram.network.api.message.SendUserMetaDataMessage;
 import com.goftagram.telegram.goftagram.parser.UserParser;
 import com.goftagram.telegram.goftagram.taskmanager.Task;
 import com.goftagram.telegram.goftagram.taskmanager.TaskManager;
@@ -105,7 +105,7 @@ public class PostUserMetaDataInteractorImp implements
     }
 
 
-    public void onEventAsync(SendUserExtraInfoNetworkMessage networkMessage){
+    public void onEventAsync(SendUserMetaDataMessage networkMessage){
 
         synchronized (sLock) {
 

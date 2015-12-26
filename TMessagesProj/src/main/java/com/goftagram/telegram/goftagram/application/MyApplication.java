@@ -23,8 +23,8 @@ public class MyApplication extends Application {
 
 
     public static String whatMarket(){
-        return cafebazaar;
-//        return myket;
+//        return cafebazaar;
+        return myket;
 //        return google;
 
     }
